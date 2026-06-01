@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.api.routes import api_router
 from app.core.config import settings
 
+
 def get_application() -> FastAPI:
     application = FastAPI(
         title=settings.PROJECT_NAME,
@@ -33,4 +34,14 @@ def get_application() -> FastAPI:
 
     return application
 
+
 app = get_application()
+
+
+@app.get("/")
+async def root():
+    return {
+        "message": "Inventrix API is running successfully 🚀",
+        "version": settings.VERSION,
+        "status": "healthy"
+    }
