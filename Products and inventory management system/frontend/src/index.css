@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0c0b0f;
+  color: #f5f3ef;
+}
+
+/* Custom premium dark scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0b0f;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.1) #0c0b0f;
+}
+
+/* --- Global Theme overrides for dark panels --- */
+.bg-white {
+  background-color: #12111a !important; /* Premium dark background */
+}
+.bg-slate-50, .bg-slate-100 {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+.border-slate-100, .border-slate-200, .border-slate-300, .border-slate-400 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.text-slate-800, .text-slate-900, .text-slate-700 {
+  color: #f5f3ef !important;
+}
+.text-slate-500, .text-slate-600 {
+  color: rgba(245, 243, 239, 0.5) !important;
+}
+.text-slate-400 {
+  color: rgba(245, 243, 239, 0.3) !important;
+}
+
+/* Modals background overlay and blur */
+.bg-slate-900\/50 {
+  background-color: rgba(12, 11, 15, 0.75) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Tables divide borders */
+.divide-slate-100 > :not([hidden]) ~ :not([hidden]) {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Form inputs styling */
+input[type="text"], input[type="number"], input[type="email"], input[type="password"], select, textarea {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: #f5f3ef !important;
+  border-radius: 8px !important;
+  transition: all 0.2s !important;
+  outline: none !important;
+}
+input[type="text"]::placeholder, input[type="number"]::placeholder, input[type="email"]::placeholder, input[type="password"]::placeholder {
+  color: rgba(245, 243, 239, 0.2) !important;
+}
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="password"]:focus, select:focus {
+  border-color: rgba(167, 139, 250, 0.5) !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15) !important;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Select dropdown options */
+select option {
+  background-color: #12111a !important;
+  color: #f5f3ef !important;
+}
+
+/* Action button overrides (Indigo) */
+.bg-indigo-600, .bg-indigo-600:hover {
+  background: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  box-shadow: 0 4px 14px rgba(124, 58, 237, 0.25) !important;
+  transition: all 0.2s !important;
+}
+.bg-indigo-600:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35) !important;
+}
+.bg-indigo-600:active {
+  transform: translateY(0) !important;
+}
+
+/* Indigo text color overrides */
+.text-indigo-600 {
+  color: #a78bfa !important;
+}
+.text-indigo-500 {
+  color: #818cf8 !important;
+}
+
+/* Complete bulletproof table row hover overrides */
+tr:hover {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+}
+tr:hover td, tr:hover td * {
+  color: #ffffff !important;
+}
+
+/* Complete bulletproof general hover state overrides */
+button:hover:not(:disabled), .hover\:bg-slate-100:hover {
+  background-color: rgba(255, 255, 255, 0.06) !important;
+  color: #ffffff !important;
+}
+
+/* Table header columns background override */
+thead.bg-slate-50 {
+  background-color: #161522 !important;
+}
+
+/* Remove highlighted table header bottom borders globally */
+thead, thead *, th {
+  border-bottom: none !important;
+}
+
+/* Enforce uniform extremely subtle row borders for all data rows */
+tbody tr, tbody td, tbody tr + tr {
+  border-top-color: rgba(255, 255, 255, 0.05) !important;
+  border-bottom-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Custom styled badges and ID blocks */
+.bg-slate-100 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Table skeletons */
+.bg-slate-200 {
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 25%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.04) 75%) !important;
+  background-size: 200% 100% !important;
+  animation: shimmer 1.5s infinite !important;
+}
+
+/* Pagination next/prev buttons override */
+.border-slate-300 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+  color: rgba(245, 243, 239, 0.6) !important;
+  transition: all 0.2s !important;
+}
+.border-slate-300:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  color: #f5f3ef !important;
+}
